@@ -51,7 +51,10 @@ public class Main {
 
     public static void task2() {
         List<Animal> animals = Util.getAnimals();
-//        animals.stream() Продолжить ...
+        animals.stream()
+                .filter(animal -> animal.getOrigin().equals("Japanese"))
+                .peek(animal -> animal.setBread(animal.getBread().toUpperCase()))
+                .forEach(System.out::println);
     }
 
     public static void task3() {
